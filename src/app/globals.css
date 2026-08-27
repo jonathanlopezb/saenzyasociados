@@ -1,0 +1,89 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --color-navy: #0B1F3A;
+    --color-navy-dark: #061325;
+    --color-blue: #0077FF;
+    --color-blue-light: #3393FF;
+    --color-cyan: #00D2FF;
+    --color-ice: #E6EEF7;
+  }
+
+  body {
+    background-color: #061325;
+    color: #F4F7FA;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(11, 31, 58, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 119, 255, 0.2);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(230, 238, 247, 0.8);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(11, 31, 58, 0.7) 0%, rgba(6, 19, 37, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 119, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 210, 255, 0.6);
+  box-shadow: 0 12px 40px 0 rgba(0, 119, 255, 0.35);
+  transform: translateY(-4px);
+}
+
+/* Glowing text & borders */
+.text-glow {
+  text-shadow: 0 0 15px rgba(0, 119, 255, 0.6);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 15px rgba(0, 210, 255, 0.7);
+}
+
+.border-glow {
+  box-shadow: 0 0 15px rgba(0, 119, 255, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #061325;
+}
+::-webkit-scrollbar-thumb {
+  background: #0077FF;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00D2FF;
+}
+
+/* Animations */
+@keyframes coldGlow {
+  0% { filter: drop-shadow(0 0 5px rgba(0, 119, 255, 0.4)); }
+  50% { filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.8)); }
+  100% { filter: drop-shadow(0 0 5px rgba(0, 119, 255, 0.4)); }
+}
+
+.animate-cold-glow {
+  animation: coldGlow 3s infinite ease-in-out;
+}
