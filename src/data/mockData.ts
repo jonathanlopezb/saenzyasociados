@@ -45,6 +45,74 @@ export interface BlogArticle {
   image: string;
 }
 
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  specialty: string;
+  certifications: string[];
+  image: string;
+  experience: string;
+}
+
+export interface ClientLogo {
+  id: string;
+  name: string;
+  category: string;
+  monogram: string;
+  badgeColor: string;
+}
+
+export const CLIENT_LOGOS: ClientLogo[] = [
+  { id: 'l1', name: 'Grupo Argos', category: 'Industria & Cemento', monogram: 'ARGOS', badgeColor: '#0077FF' },
+  { id: 'l2', name: 'Universidad de Cartagena', category: 'Educación & Campus', monogram: 'UDC', badgeColor: '#00D2FF' },
+  { id: 'l3', name: 'Ecopetrol', category: 'Energía & Petróleo', monogram: 'ECOPETROL', badgeColor: '#10B981' },
+  { id: 'l4', name: 'Hotel Almirante', category: 'Hotelería Caribe', monogram: 'ALMIRANTE', badgeColor: '#F59E0B' },
+  { id: 'l5', name: 'Grupo Nutresa', category: 'Alimentos & Bebidas', monogram: 'NUTRESA', badgeColor: '#EF4444' },
+  { id: 'l6', name: 'Postobón S.A.', category: 'Bebidas e Industria', monogram: 'POSTOBÓN', badgeColor: '#8B5CF6' },
+  { id: 'l7', name: 'Clínica del Norte', category: 'Salud & IPS', monogram: 'IPS NORTE', badgeColor: '#06B6D4' },
+  { id: 'l8', name: 'Constructora Bolívar', category: 'Infraestructura', monogram: 'BOLÍVAR', badgeColor: '#3B82F6' },
+];
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    id: 't1',
+    name: 'Ing. Roberto Sáenz',
+    role: 'Director General de Operaciones & HVAC',
+    specialty: 'Ingeniería Mecánica & Sistemas VRF/Chillers',
+    certifications: ['Certificación Daikin/Carrier', 'Master en Eficiencia Energética', 'Licencia SST'],
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80',
+    experience: '14+ Años'
+  },
+  {
+    id: 't2',
+    name: 'Ing. María Fernanda López',
+    role: 'Coordinadora Nacional SST & Calidad',
+    specialty: 'Seguridad Industrial & Normativa Sanitaria INVIMA',
+    certifications: ['Auditora ISO 9001 / 45001', 'Coordinadora de Trabajo en Alturas', 'SST Titulada'],
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    experience: '10+ Años'
+  },
+  {
+    id: 't3',
+    name: 'Técnico Carlos Mendoza',
+    role: 'Líder Técnico de Climatización & Refrigeración',
+    specialty: 'Cuartos Fríos, Gases Ecológicos R32/R410A & Automatización',
+    certifications: ['Técnico SENA HVAC', 'Manejo de Sustancias Refrigerantes', 'AWS Soldadura Inox'],
+    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
+    experience: '12+ Años'
+  },
+  {
+    id: 't4',
+    name: 'Biólogo Mario Restrepo',
+    role: 'Especialista en Control Integrado de Plagas (MIP)',
+    specialty: 'Sanitización Estéril & Control Entomológico Sanitario',
+    certifications: ['Registro Secretaría de Salud', 'Manejo Seguro de Plaguicidas', 'Bio-Seguridad IPS'],
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    experience: '9+ Años'
+  }
+];
+
 export const SERVICES_CATALOG: ServiceLine[] = [
   {
     id: 'hvac-refrigeracion',
@@ -310,14 +378,14 @@ export const BLOG_POSTS: BlogArticle[] = [
 ];
 
 export const CLIENT_PORTAL_MOCK = {
-  clientName: 'Hotel Almirante Caribe S.A.S.',
-  nit: '900.458.129-4',
-  activeContract: 'Mantenimiento Integral HVAC & Pinturas 2026',
+  clientName: 'Grupo Argos / Hotel Almirante / Universidad de Cartagena',
+  nitDemo: 'ARGOS-2026',
+  activeContract: 'Mantenimiento Integral HVAC, Obras & Adecuaciones 2026',
   equipmentList: [
-    { id: 'EQ-01', type: 'Chiller Central Daikin 50TR', area: 'Edificio Principal', status: 'Operativo - 100%', lastMaint: '15/08/2026', nextMaint: '15/11/2026' },
-    { id: 'EQ-02', type: 'Cuarto Frío Congelados 15HP', area: 'Cocina Central', status: 'Operativo - 100%', lastMaint: '02/08/2026', nextMaint: '02/09/2026' },
-    { id: 'EQ-03', type: 'Sistema VRF Carrier 24HP', area: 'Salón de Eventos', status: 'Atención Requerida (Filtro)', lastMaint: '10/06/2026', nextMaint: '30/08/2026' },
-    { id: 'EQ-04', type: '12 MiniSplits Inverter 24k BTU', area: 'Habitaciones VIP', status: 'Operativo - 100%', lastMaint: '20/07/2026', nextMaint: '20/10/2026' }
+    { id: 'EQ-01', type: 'Chiller Central Daikin 50TR', area: 'Planta Principal / Campus', status: 'Operativo - 100%', lastMaint: '15/08/2026', nextMaint: '15/11/2026' },
+    { id: 'EQ-02', type: 'Cuarto Frío Congelados 15HP', area: 'Cocina & Conservación', status: 'Operativo - 100%', lastMaint: '02/08/2026', nextMaint: '02/09/2026' },
+    { id: 'EQ-03', type: 'Sistema VRF Carrier 24HP', area: 'Edificio de Oficinas / Aulas', status: 'Atención Requerida (Filtro)', lastMaint: '10/06/2026', nextMaint: '30/08/2026' },
+    { id: 'EQ-04', type: '12 MiniSplits Inverter 24k BTU', area: 'Salas de Reuniones & Auditorios', status: 'Operativo - 100%', lastMaint: '20/07/2026', nextMaint: '20/10/2026' }
   ],
   invoices: [
     { id: 'FAC-2026-891', date: '01/08/2026', amount: '$ 4,850,000 COP', status: 'Pagada', downloadUrl: '#' },

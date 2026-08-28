@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown, Calculator, Calendar, Building2, ShieldCheck } from 'lucide-react';
+import { Menu, X, ChevronDown, Calculator, Calendar, ShieldCheck, Users, Lock } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -118,9 +118,9 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/clientes" className="text-sm font-medium text-slate-200 hover:text-[#00D2FF] transition-colors flex items-center gap-1.5">
-              <Building2 className="w-4 h-4 text-[#00D2FF]" />
-              Clientes
+            <Link href="/equipo" className="text-sm font-medium text-slate-200 hover:text-[#00D2FF] transition-colors flex items-center gap-1.5">
+              <Users className="w-4 h-4 text-[#00D2FF]" />
+              Nuestro Equipo
             </Link>
 
             <Link href="/proyectos" className="text-sm font-medium text-slate-200 hover:text-[#00D2FF] transition-colors">
@@ -143,13 +143,13 @@ export default function Navbar() {
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             
-            {/* Clientes Corporativos Badge */}
+            {/* B2B Client Access Gate Badge restored as requested */}
             <Link
-              href="/clientes"
+              href="/portal-clientes"
               className="inline-flex items-center gap-2 text-xs font-bold text-white bg-gradient-to-r from-blue-700 via-indigo-600 to-[#0077FF] border border-[#00D2FF]/50 hover:border-[#00D2FF] px-3.5 py-2.5 rounded-xl shadow-lg shadow-blue-900/40 hover:scale-[1.03] transition-all"
             >
-              <Building2 className="w-4 h-4 text-[#00D2FF]" />
-              <span>Nuestros Clientes</span>
+              <Lock className="w-4 h-4 text-[#00D2FF]" />
+              <span>Portal B2B / Facturas</span>
             </Link>
 
             <Link 
@@ -164,11 +164,11 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <div className="flex lg:hidden items-center gap-2">
             <Link
-              href="/clientes"
+              href="/portal-clientes"
               className="flex items-center gap-1 bg-gradient-to-r from-blue-700 to-[#0077FF] text-white p-2 rounded-xl text-xs font-bold"
             >
-              <Building2 className="w-3.5 h-3.5 text-[#00D2FF]" />
-              Clientes
+              <Lock className="w-3.5 h-3.5 text-[#00D2FF]" />
+              Portal B2B
             </Link>
 
             <button
@@ -189,18 +189,18 @@ export default function Navbar() {
           
           <div className="bg-[#0B1F3A] p-3 rounded-xl border border-[#0077FF]/40 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-[#00D2FF]" />
+              <Lock className="w-5 h-5 text-[#00D2FF]" />
               <div>
-                <div className="text-xs font-bold text-white">Nuestros Clientes</div>
-                <div className="text-[10px] text-slate-300">Empresas respaldadas en Colombia</div>
+                <div className="text-xs font-bold text-white">Portal Privado B2B</div>
+                <div className="text-[10px] text-slate-300">Facturas, avances & equipos</div>
               </div>
             </div>
             <Link 
-              href="/clientes" 
+              href="/portal-clientes" 
               onClick={() => setMobileMenuOpen(false)}
               className="bg-[#0077FF] text-white text-xs font-bold px-3 py-1.5 rounded-lg"
             >
-              Ver Clientes
+              Ingresar
             </Link>
           </div>
 
@@ -221,11 +221,11 @@ export default function Navbar() {
               <span className="text-xs bg-[#0077FF] text-white px-2 py-0.5 rounded">5 Líneas</span>
             </Link>
             <Link 
-              href="/clientes" 
+              href="/equipo" 
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-semibold text-white hover:text-[#00D2FF] p-2 rounded-lg"
             >
-              Clientes Corporativos
+              Nuestro Equipo de Ingenieros
             </Link>
             <Link 
               href="/refrigeracion" 
@@ -271,7 +271,7 @@ export default function Navbar() {
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#0077FF] to-[#00D2FF] text-white font-bold text-xs py-3 rounded-xl shadow-lg"
             >
               <Calculator className="w-4 h-4" />
-              Cotizar IA
+              Cotizar
             </Link>
             <Link
               href="/agendar"

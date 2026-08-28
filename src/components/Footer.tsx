@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowUpRight, MessageSquare, Building2 } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowUpRight, MessageSquare, Building2, Users } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -91,12 +91,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/clientes" className="hover:text-[#00D2FF] transition-colors font-medium text-[#00D2FF]">
-                  🏢 Nuestros Clientes Corporativos
+                <Link href="/equipo" className="hover:text-[#00D2FF] transition-colors font-medium text-[#00D2FF]">
+                  👷 Nuestro Equipo de Ingenieros
                 </Link>
               </li>
               <li>
-                <Link href="/cotizador" className="hover:text-[#00D2FF] transition-colors font-medium text-[#00D2FF]">
+                <Link href="/portal-clientes" className="hover:text-[#00D2FF] transition-colors font-medium text-[#00D2FF]">
+                  🔐 Portal B2B / Descargar Facturas
+                </Link>
+              </li>
+              <li>
+                <Link href="/cotizador" className="hover:text-[#00D2FF] transition-colors font-medium text-white">
                   ⚡ Cotizador Inteligente B2B
                 </Link>
               </li>
@@ -108,11 +113,6 @@ export default function Footer() {
               <li>
                 <Link href="/cobertura" className="hover:text-[#00D2FF] transition-colors">
                   🗺️ Cobertura Colombia
-                </Link>
-              </li>
-              <li>
-                <Link href="/pqrs" className="hover:text-[#00D2FF] transition-colors">
-                  📋 Portal PQRS & Peticiones
                 </Link>
               </li>
             </ul>
