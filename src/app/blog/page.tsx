@@ -1,7 +1,8 @@
+'use client';
+
 import React from 'react';
 import { BLOG_POSTS } from '@/data/mockData';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
 
 export default function BlogPage() {

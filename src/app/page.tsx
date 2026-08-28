@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import HeroCanvas from '@/components/HeroCanvas';
 import CounterSection from '@/components/CounterSection';

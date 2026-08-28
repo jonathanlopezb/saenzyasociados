@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import TemperatureSimulator from '@/components/TemperatureSimulator';
 import Virtual360Tour from '@/components/Virtual360Tour';

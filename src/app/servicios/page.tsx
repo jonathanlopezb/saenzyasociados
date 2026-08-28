@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import ServicesGrid from '@/components/ServicesGrid';
 import SmartCalculator from '@/components/SmartCalculator';

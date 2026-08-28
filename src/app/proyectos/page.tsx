@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import { PROJECTS } from '@/data/mockData';
