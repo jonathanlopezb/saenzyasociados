@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowUpRight, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowUpRight, MessageSquare, Building2 } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -87,9 +87,14 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white text-base mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#00D2FF]" />
-              Herramientas & Sectores
+              Nuestra Empresa
             </h4>
             <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link href="/clientes" className="hover:text-[#00D2FF] transition-colors font-medium text-[#00D2FF]">
+                  🏢 Nuestros Clientes Corporativos
+                </Link>
+              </li>
               <li>
                 <Link href="/cotizador" className="hover:text-[#00D2FF] transition-colors font-medium text-[#00D2FF]">
                   ⚡ Cotizador Inteligente B2B
@@ -98,11 +103,6 @@ export default function Footer() {
               <li>
                 <Link href="/agendar" className="hover:text-[#00D2FF] transition-colors">
                   📅 Agendar Visita Técnica
-                </Link>
-              </li>
-              <li>
-                <Link href="/portal-clientes" className="hover:text-[#00D2FF] transition-colors">
-                  🔐 Portal de Clientes
                 </Link>
               </li>
               <li>

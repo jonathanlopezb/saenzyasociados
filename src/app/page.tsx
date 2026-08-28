@@ -10,7 +10,7 @@ import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import SectorsSection from '@/components/SectorsSection';
 import SmartCalculator from '@/components/SmartCalculator';
 import BookingCalendar from '@/components/BookingCalendar';
-import ClientPortal from '@/components/ClientPortal';
+import ClientsSection from '@/components/ClientsSection';
 import ColombiaMap from '@/components/ColombiaMap';
 import Testimonials from '@/components/Testimonials';
 
@@ -44,8 +44,8 @@ export default function Home() {
       {/* 9. Technical Visit Booking Scheduler */}
       <BookingCalendar />
 
-      {/* 10. Live B2B Daily Progress Reports & Client Dashboard */}
-      <ClientPortal />
+      {/* 10. Corporate Clients Showcase */}
+      <ClientsSection />
 
       {/* 11. Interactive Colombia Regional Coverage */}
       <ColombiaMap />

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown, PhoneCall, Calculator, Calendar, ShieldCheck, Activity, FileText } from 'lucide-react';
+import { Menu, X, ChevronDown, Calculator, Calendar, Building2, ShieldCheck } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -118,6 +118,11 @@ export default function Navbar() {
               )}
             </div>
 
+            <Link href="/clientes" className="text-sm font-medium text-slate-200 hover:text-[#00D2FF] transition-colors flex items-center gap-1.5">
+              <Building2 className="w-4 h-4 text-[#00D2FF]" />
+              Clientes
+            </Link>
+
             <Link href="/proyectos" className="text-sm font-medium text-slate-200 hover:text-[#00D2FF] transition-colors">
               Proyectos
             </Link>
@@ -138,16 +143,13 @@ export default function Navbar() {
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             
-            {/* Prominent B2B Daily Progress Reports Button requested by User */}
+            {/* Clientes Corporativos Badge */}
             <Link
-              href="/portal-clientes"
-              className="inline-flex items-center gap-2 text-xs font-bold text-white bg-gradient-to-r from-blue-700 via-indigo-600 to-[#0077FF] border border-[#00D2FF]/50 hover:border-[#00D2FF] px-3.5 py-2.5 rounded-xl shadow-lg shadow-blue-900/40 hover:scale-[1.03] transition-all group"
+              href="/clientes"
+              className="inline-flex items-center gap-2 text-xs font-bold text-white bg-gradient-to-r from-blue-700 via-indigo-600 to-[#0077FF] border border-[#00D2FF]/50 hover:border-[#00D2FF] px-3.5 py-2.5 rounded-xl shadow-lg shadow-blue-900/40 hover:scale-[1.03] transition-all"
             >
-              <Activity className="w-4 h-4 text-[#00D2FF] animate-pulse" />
-              <span>Avances & Reportes B2B</span>
-              <span className="bg-emerald-500 text-white text-[9px] px-1.5 py-0.5 rounded font-black tracking-wider uppercase">
-                EN VIVO
-              </span>
+              <Building2 className="w-4 h-4 text-[#00D2FF]" />
+              <span>Nuestros Clientes</span>
             </Link>
 
             <Link 
@@ -162,11 +164,11 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <div className="flex lg:hidden items-center gap-2">
             <Link
-              href="/portal-clientes"
+              href="/clientes"
               className="flex items-center gap-1 bg-gradient-to-r from-blue-700 to-[#0077FF] text-white p-2 rounded-xl text-xs font-bold"
             >
-              <Activity className="w-3.5 h-3.5 text-[#00D2FF]" />
-              Avances B2B
+              <Building2 className="w-3.5 h-3.5 text-[#00D2FF]" />
+              Clientes
             </Link>
 
             <button
@@ -187,18 +189,18 @@ export default function Navbar() {
           
           <div className="bg-[#0B1F3A] p-3 rounded-xl border border-[#0077FF]/40 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Activity className="w-5 h-5 text-[#00D2FF]" />
+              <Building2 className="w-5 h-5 text-[#00D2FF]" />
               <div>
-                <div className="text-xs font-bold text-white">Portal de Avances B2B</div>
-                <div className="text-[10px] text-slate-300">Reportes diarios & fotos de obra</div>
+                <div className="text-xs font-bold text-white">Nuestros Clientes</div>
+                <div className="text-[10px] text-slate-300">Empresas respaldadas en Colombia</div>
               </div>
             </div>
             <Link 
-              href="/portal-clientes" 
+              href="/clientes" 
               onClick={() => setMobileMenuOpen(false)}
               className="bg-[#0077FF] text-white text-xs font-bold px-3 py-1.5 rounded-lg"
             >
-              Ingresar
+              Ver Clientes
             </Link>
           </div>
 
@@ -217,6 +219,13 @@ export default function Navbar() {
             >
               Nuestros Servicios
               <span className="text-xs bg-[#0077FF] text-white px-2 py-0.5 rounded">5 Líneas</span>
+            </Link>
+            <Link 
+              href="/clientes" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-white hover:text-[#00D2FF] p-2 rounded-lg"
+            >
+              Clientes Corporativos
             </Link>
             <Link 
               href="/refrigeracion" 
