@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Eye, Flame, ShieldAlert, Cpu, CheckCircle2, Download, MessageSquare, Zap, Activity, RefreshCw } from 'lucide-react';
+import { Eye, Flame, ShieldAlert, Cpu, CheckCircle2, Download, MessageSquare, Zap, Activity, RefreshCw, Upload, Camera } from 'lucide-react';
 
 interface AssetScene {
   id: string;
@@ -18,7 +18,7 @@ interface AssetScene {
   diagnostics: { point: string; temp: string; status: 'critical' | 'warning' | 'normal'; recommendation: string }[];
 }
 
-const ASSET_SCENES: AssetScene[] = [
+const PRESET_SCENES: AssetScene[] = [
   {
     id: 'cuarto-frio',
     name: 'Cuarto Frío Agroindustrial (Conservación 0°C)',
@@ -67,15 +67,42 @@ const ASSET_SCENES: AssetScene[] = [
 ];
 
 export default function DigitalTwinScanner() {
-  const [selectedScene, setSelectedScene] = useState<AssetScene>(ASSET_SCENES[0]);
+  const [selectedScene, setSelectedScene] = useState<AssetScene>(PRESET_SCENES[0]);
   const [thermalMode, setThermalMode] = useState<boolean>(true);
   const [scanning, setScanning] = useState<boolean>(false);
+  const [customImage, setCustomImage] = useState<string | null>(null);
 
   const handleScanRefresh = () => {
     setScanning(true);
     setTimeout(() => {
       setScanning(false);
     }, 800);
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setCustomImage(reader.result as string);
+        setSelectedScene({
+          id: 'custom-upload',
+          name: 'Foto Personalizada de su Equipo / Instalación',
+          category: 'Escaneo Personalizado Cliente',
+          normalImg: reader.result as string,
+          thermalImg: reader.result as string,
+          tempReadout: '24.5°C / Hotspot 58.2°C',
+          efficiency: 75,
+          hotspotCount: 1,
+          savingsEstimate: 'Evaluación Técnica Requerida',
+          diagnostics: [
+            { point: 'Análisis de Foto Cargada', temp: '58.2°C (Punto Térmico Detectado)', status: 'warning', recommendation: 'Enviar esta foto a nuestros ingenieros para dictamen de campo' }
+          ]
+        });
+        handleScanRefresh();
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -102,21 +129,22 @@ export default function DigitalTwinScanner() {
           </h2>
           
           <p className="text-sm sm:text-base text-slate-300">
-            Nuestros ingenieros utilizan termografía infrarroja de alta resolución y análisis técnico predictivo para detectar fugas de refrigerante, puntos de calor en tableros y fallas mecánicas antes de que detengan su operación.
+            Pruebe los escenarios predeterminados o <strong>suba una foto de su propio equipo</strong> para visualizar el análisis termográfico virtual.
           </p>
         </div>
 
-        {/* Scene Selector Tabs */}
+        {/* Scene Selector Tabs + Custom Image Uploader */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          {ASSET_SCENES.map((scene) => (
+          {PRESET_SCENES.map((scene) => (
             <button
               key={scene.id}
               onClick={() => {
+                setCustomImage(null);
                 setSelectedScene(scene);
                 handleScanRefresh();
               }}
               className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 border ${
-                selectedScene.id === scene.id
+                selectedScene.id === scene.id && !customImage
                   ? 'bg-[#0077FF] border-[#00D2FF] text-white shadow-lg shadow-[#0077FF]/40'
                   : 'bg-[#0B1F3A]/80 border-[#0077FF]/30 text-slate-300 hover:text-white hover:border-[#00D2FF]/60'
               }`}
@@ -125,6 +153,22 @@ export default function DigitalTwinScanner() {
               {scene.name}
             </button>
           ))}
+
+          {/* Upload Own Equipment Photo Button */}
+          <label className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 border cursor-pointer ${
+            customImage
+              ? 'bg-gradient-to-r from-emerald-600 to-teal-500 border-emerald-400 text-white shadow-lg'
+              : 'bg-emerald-600/30 hover:bg-emerald-600 border-emerald-500/50 text-emerald-300 hover:text-white'
+          }`}>
+            <Camera className="w-4 h-4" />
+            <span>{customImage ? '📷 Foto Personalizada Cargada' : '📸 Subir Foto de Mi Equipo'}</span>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="hidden"
+            />
+          </label>
         </div>
 
         {/* Interactive Viewer Layout */}
@@ -171,6 +215,7 @@ export default function DigitalTwinScanner() {
                 alt={selectedScene.name}
                 fill
                 className={`object-cover transition-opacity duration-700 ${scanning ? 'opacity-30' : 'opacity-90'}`}
+                unoptimized={!!customImage}
               />
 
               {/* Thermal Gradient Filter Overlay */}
@@ -189,7 +234,7 @@ export default function DigitalTwinScanner() {
                   <div className="absolute top-1/3 left-1/4 animate-bounce">
                     <div className="bg-red-600/90 text-white text-[10px] font-black px-2 py-1 rounded-md shadow-lg border border-yellow-300 flex items-center gap-1">
                       <Flame className="w-3 h-3 text-yellow-300" />
-                      ALERTA TÉRMICA: 76.5°C
+                      ALERTA TÉRMICA: 58.2°C
                     </div>
                   </div>
                   <div className="absolute bottom-1/3 right-1/3">
