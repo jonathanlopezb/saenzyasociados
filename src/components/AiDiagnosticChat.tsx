@@ -16,7 +16,7 @@ export default function AiDiagnosticChat() {
     {
       id: '1',
       sender: 'bot',
-      text: '¡Hola! Soy el Asistente IA de Diagnóstico Técnico de Sáenz y Asociados S.A.S. ¿Qué problema o requerimiento presenta en sus instalaciones?',
+      text: '¡Hola! Soy el Asistente Virtual Técnico de Sáenz y Asociados S.A.S. ¿Qué problema o requerimiento presenta en sus instalaciones?',
       options: [
         { label: '❄️ El aire no enfría / bota agua', action: 'ac_fault' },
         { label: '🔊 Compresor hace ruido extraño', action: 'compressor_noise' },
@@ -87,10 +87,10 @@ export default function AiDiagnosticChat() {
         <button
           onClick={() => setIsOpen(true)}
           className="relative group flex items-center gap-2 bg-gradient-to-r from-[#0077FF] to-[#00D2FF] text-white p-4 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all border-2 border-white/40"
-          aria-label="Abrir Chat Bot IA"
+          aria-label="Abrir Asistente Virtual Técnico"
         >
           <Bot className="w-6 h-6 animate-bounce" />
-          <span className="hidden sm:inline font-bold text-xs pr-1">Diagnóstico IA 24/7</span>
+          <span className="hidden sm:inline font-bold text-xs pr-1">Asistente Virtual 24/7</span>
           <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 border-2 border-slate-900 rounded-full" />
         </button>
       )}
@@ -107,7 +107,7 @@ export default function AiDiagnosticChat() {
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                  Diagnóstico Técnico IA
+                  Asistente Virtual Técnico
                   <Sparkles className="w-3.5 h-3.5 text-[#00D2FF]" />
                 </h4>
                 <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
@@ -164,7 +164,7 @@ export default function AiDiagnosticChat() {
           <div className="p-3 bg-[#061325] border-t border-slate-800 flex items-center justify-between text-xs">
             <span className="text-[11px] text-slate-400">¿Urgencia 24H?</span>
             <a
-              href="https://wa.me/573000000000?text=Hola,%20tengo%20una%20urgencia%20tecnica"
+              href="https://wa.me/573000000000?text=Hola,%20requiero%20asistencia%20tecnica%20inmediata"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 font-bold text-white bg-emerald-600 hover:bg-emerald-500 px-3 py-1.5 rounded-lg transition-colors"

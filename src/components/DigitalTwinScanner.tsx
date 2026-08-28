@@ -97,12 +97,12 @@ export default function DigitalTwinScanner() {
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
             Simulador de Gemelo Digital & <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-[#00D2FF] via-[#3393FF] to-white bg-clip-text text-transparent">
-              Escáner Térmico IoT de Instalaciones
+              Escáner Térmico Virtual de Instalaciones
             </span>
           </h2>
           
           <p className="text-sm sm:text-base text-slate-300">
-            Nuestros ingenieros utilizan termografía infrarroja de alta resolución e inteligencia predictiva para detectar fugas de refrigerante, puntos de calor en tableros y fallas mecánicas antes de que detengan su operación.
+            Nuestros ingenieros utilizan termografía infrarroja de alta resolución y análisis técnico predictivo para detectar fugas de refrigerante, puntos de calor en tableros y fallas mecánicas antes de que detengan su operación.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export default function DigitalTwinScanner() {
                   }`}
                 >
                   <Flame className="w-3.5 h-3.5" />
-                  Cámara Térmica AI
+                  Cámara Térmica Virtual
                 </button>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function DigitalTwinScanner() {
                   className="flex items-center gap-1 text-[11px] font-bold text-[#00D2FF] hover:text-white bg-[#0077FF]/20 px-2.5 py-1 rounded-lg border border-[#0077FF]/40"
                 >
                   <RefreshCw className={`w-3 h-3 ${scanning ? 'animate-spin' : ''}`} />
-                  Re-Escanear AI
+                  Re-Escanear Diagnóstico
                 </button>
               </div>
 
@@ -230,7 +230,7 @@ export default function DigitalTwinScanner() {
             
             <div>
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
-                <h3 className="font-bold text-white text-base">Diagnóstico IoT en Tiempo Real</h3>
+                <h3 className="font-bold text-white text-base">Diagnóstico Virtual en Tiempo Real</h3>
                 <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/30">
                   Activo
                 </span>

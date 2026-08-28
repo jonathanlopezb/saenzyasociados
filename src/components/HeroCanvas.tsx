@@ -157,7 +157,7 @@ export default function HeroCanvas() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#0077FF] to-[#00D2FF] text-white font-bold text-sm sm:text-base px-8 py-4 rounded-xl shadow-xl shadow-[#0077FF]/40 hover:shadow-[#00D2FF]/60 hover:scale-[1.03] active:scale-[0.98] transition-all"
           >
             <Calculator className="w-5 h-5" />
-            Cotizar Ahora con IA
+            Cotizar con Calculadora
           </Link>
           
           <Link
