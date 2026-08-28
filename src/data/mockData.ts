@@ -51,7 +51,7 @@ export interface TeamMember {
   role: string;
   specialty: string;
   certifications: string[];
-  image: string;
+  monogram: string;
   experience: string;
 }
 
@@ -77,39 +77,21 @@ export const CLIENT_LOGOS: ClientLogo[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 't1',
-    name: 'Ing. Roberto Sáenz',
-    role: 'Director General de Operaciones & HVAC',
-    specialty: 'Ingeniería Mecánica & Sistemas VRF/Chillers',
-    certifications: ['Certificación Daikin/Carrier', 'Master en Eficiencia Energética', 'Licencia SST'],
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80',
-    experience: '14+ Años'
+    name: 'Jonatan López',
+    role: 'Gerente Comercial',
+    specialty: 'Ingeniero de Sistemas IoT & Estrategia Tecnológica',
+    certifications: ['Ingeniero de Sistemas IoT', 'Estrategia Comercial B2B', 'Automatización de Servicios'],
+    monogram: 'JL',
+    experience: 'Dirección Comercial'
   },
   {
     id: 't2',
-    name: 'Ing. María Fernanda López',
-    role: 'Coordinadora Nacional SST & Calidad',
-    specialty: 'Seguridad Industrial & Normativa Sanitaria INVIMA',
-    certifications: ['Auditora ISO 9001 / 45001', 'Coordinadora de Trabajo en Alturas', 'SST Titulada'],
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
-    experience: '10+ Años'
-  },
-  {
-    id: 't3',
-    name: 'Técnico Carlos Mendoza',
-    role: 'Líder Técnico de Climatización & Refrigeración',
-    specialty: 'Cuartos Fríos, Gases Ecológicos R32/R410A & Automatización',
-    certifications: ['Técnico SENA HVAC', 'Manejo de Sustancias Refrigerantes', 'AWS Soldadura Inox'],
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
-    experience: '12+ Años'
-  },
-  {
-    id: 't4',
-    name: 'Biólogo Mario Restrepo',
-    role: 'Especialista en Control Integrado de Plagas (MIP)',
-    specialty: 'Sanitización Estéril & Control Entomológico Sanitario',
-    certifications: ['Registro Secretaría de Salud', 'Manejo Seguro de Plaguicidas', 'Bio-Seguridad IPS'],
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
-    experience: '9+ Años'
+    name: 'Luis Sáenz',
+    role: 'Gerente Operativo',
+    specialty: 'Ingeniería de Instalaciones & Operaciones Campo',
+    certifications: ['Certificación ISO 9001 / 45001', 'Especialista HVAC & Cuartos Fríos', 'Licencia SST & AWS Soldadura'],
+    monogram: 'LS',
+    experience: 'Dirección Operativa'
   }
 ];
 
