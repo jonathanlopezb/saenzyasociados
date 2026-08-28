@@ -8,6 +8,7 @@ import { Eye, Flame, ShieldAlert, Cpu, CheckCircle2, Download, MessageSquare, Za
 interface DigitalTwinUseCase {
   id: string;
   title: string;
+  name?: string;
   sector: string;
   protocol: 'MQTT' | 'OPC UA' | 'Modbus TCP';
   normalImg: string;
