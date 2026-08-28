@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Menu, X, ChevronDown, Calculator, Calendar, ShieldCheck, Users, Lock } from 'lucide-react';
 
 export default function Navbar() {
@@ -31,28 +30,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo & Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-white/10 p-1 border border-[#0077FF]/40 group-hover:border-[#00D2FF] transition-all">
-              <Image 
-                src="/logo.png" 
-                alt="Sáenz y Asociados S.A.S." 
-                fill 
-                className="object-contain p-0.5"
-                priority
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-[#00D2FF] transition-colors flex items-center gap-1.5">
-                SÁENZ Y ASOCIADOS
-                <span className="bg-[#0077FF] text-white text-[9px] font-bold px-1.5 py-0.5 rounded tracking-wider uppercase">
-                  S.A.S.
-                </span>
-              </span>
-              <span className="text-[10px] sm:text-[11px] text-slate-300 font-medium tracking-wide">
-                Soluciones Integrales de Ingeniería
-              </span>
-            </div>
+          {/* Brand Name Only (No Image, No S.A.S.) */}
+          <Link href="/" className="flex flex-col group">
+            <span className="font-extrabold text-lg sm:text-xl tracking-tight text-white group-hover:text-[#00D2FF] transition-colors">
+              SÁENZ Y ASOCIADOS
+            </span>
+            <span className="text-[10px] sm:text-[11px] text-slate-300 font-medium tracking-wide">
+              Soluciones Integrales de Ingeniería
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -143,7 +128,7 @@ export default function Navbar() {
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             
-            {/* B2B Client Access Gate Badge restored as requested */}
+            {/* B2B Client Access Gate Badge */}
             <Link
               href="/portal-clientes"
               className="inline-flex items-center gap-2 text-xs font-bold text-white bg-gradient-to-r from-blue-700 via-indigo-600 to-[#0077FF] border border-[#00D2FF]/50 hover:border-[#00D2FF] px-3.5 py-2.5 rounded-xl shadow-lg shadow-blue-900/40 hover:scale-[1.03] transition-all"
